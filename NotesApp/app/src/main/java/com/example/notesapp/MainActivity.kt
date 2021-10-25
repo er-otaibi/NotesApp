@@ -29,8 +29,7 @@ class MainActivity : AppCompatActivity() {
 
             var helper = DBHelper(applicationContext)
             var status = helper.savedat(s1)
-//            notesList.add(s1)
-//            rvMain.adapter!!.notifyDataSetChanged()
+
             Toast.makeText(this , "Your note is added successfully $status" , Toast.LENGTH_LONG).show()
         }
 
