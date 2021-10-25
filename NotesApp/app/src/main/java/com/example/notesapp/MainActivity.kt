@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var etnote: EditText
     lateinit var addBtn: Button
     var notesList = arrayListOf<String>()
-    var s1 =""
+    var note =""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,10 +25,10 @@ class MainActivity : AppCompatActivity() {
         addBtn = findViewById(R.id.addBtn)
 
         addBtn.setOnClickListener {
-            s1 = etnote.text.toString()
+            note = etnote.text.toString()
 
             var helper = DBHelper(applicationContext)
-            var status = helper.savedat(s1)
+            var status = helper.savedat(note)
 
             Toast.makeText(this , "Your note is added successfully $status" , Toast.LENGTH_LONG).show()
         }
